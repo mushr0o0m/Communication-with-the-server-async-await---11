@@ -1,9 +1,7 @@
 (() => {
-
     async function createBlogList() {
         const pageParams = new URLSearchParams(window.location.search);
         const response = await fetch(`https://gorest.co.in/public-api/posts?page=${Number(pageParams.get("page"))}`);
-
         const post = await response.json();
 
         createBlogListArticles(post.data);
@@ -17,6 +15,7 @@
             const articleItem = document.createElement("a");
             articleItem.classList.add("list-group-item", "list-group-item-action");
             articleItem.textContent = item.title;
+            articleItem.setAttribute("href", `post.html?id=${item.id}`);
             articleList.append(articleItem);
         }
 
@@ -45,8 +44,8 @@
                     pageLink = document.createElement("span");
                 } else
                     pageLink.setAttribute("href", `index.html?page=${temp + 1}`);
-                pageLink.textContent = "Next";
 
+                pageLink.textContent = "Next";
             } else {
                 if (i > maxPageNum) {
                     pageItem.classList.add("disabled");

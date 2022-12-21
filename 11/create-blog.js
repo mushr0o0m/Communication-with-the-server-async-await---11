@@ -54,7 +54,7 @@
                     pageLink = document.createElement("span");
                     pageItem.classList.add("active");
                 } else
-                    pageLink.setAttribute("href", `index.html?page=${i}`)
+                    pageLink.setAttribute("href", `index.html?page=${i}`);
 
                 pageLink.textContent = i.toString();
             }

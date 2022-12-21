@@ -25,7 +25,6 @@
             commentBody.append(commentTitle, commentText);
             commentsItem.append(commentBody);
             commentsList.append(commentsItem);
-            console.log("NAME-", item.name, "BODY-", item.body)
         }
 
         document.querySelector("div").append(commentsList);
